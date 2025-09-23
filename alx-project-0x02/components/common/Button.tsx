@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonProps } from '@/interfaces'
+import {type ButtonProps } from '@/interfaces'
 
 const Button: React.FC<ButtonProps> = ({ size, shape, children }: ButtonProps) => {
   const baseStyles = "px-4 py-2 text-white rounded"
