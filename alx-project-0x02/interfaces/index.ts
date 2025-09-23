@@ -7,6 +7,7 @@ export interface CardProps {
   content: string;
 }
 
-
-
-
+export interface PostModalProps {
+  onClose: () => void;
+  onSubmit: (post: { title: string; content: string }) => void;
+}
