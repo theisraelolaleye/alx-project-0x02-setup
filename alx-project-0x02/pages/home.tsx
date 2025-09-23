@@ -2,6 +2,7 @@ import React from 'react'
 import Card from '@/components/common/Card'
 import PostModal from '@/components/common/PostModal'
 import { useState } from 'react'
+import Header from '@/components/layout/Header'
 
 
 const HomePage = () => {
@@ -19,25 +20,29 @@ const HomePage = () => {
   }
 
   return (
+    <>
+      <Header />
 
-    <section>
-      <h1 className="text-2xl font-bold mb-4">HomePage</h1>
+      <section>
+        <h1 className="text-2xl font-bold mb-4">HomePage</h1>
 
-      <button
-        onClick={() => setIsModalOpen(true)}
-        className="mb-4 px-4 py-2 bg-green-500 text-white rounded"
-      >
-        New Post
-      </button>
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="mb-4 px-4 py-2 bg-green-500 text-white rounded"
+        >
+          New Post
+        </button>
 
-      {posts.map((post, index) => (
-        <Card key={index} title={post.title} content={post.content} />
-      ))}
+        {posts.map((post, index) => (
+          <Card key={index} title={post.title} content={post.content} />
+        ))}
 
-      {isModalOpen && (
-        <PostModal onClose={() => setIsModalOpen(false)} onSubmit={handleAddPost} />
-      )}
-    </section>
+        {isModalOpen && (
+          <PostModal onClose={() => setIsModalOpen(false)} onSubmit={handleAddPost} />
+        )}
+      </section>
+
+    </>
   )
 }
 
